@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUomDto } from './dto/create-uom.dto';
 import { UpdateUomDto } from './dto/update-uom.dto';
-import { DataSource } from 'typeorm';
+import { DataSource, Repository } from 'typeorm';
+import { Uom } from './entities/uom.entity';
 
 @Injectable()
 export class UomService {
   constructor(
     // @InjectRepository(Item)
-    // private readonly itemRepo: Repository<Item>,
+    private readonly itemRepo: Repository<Uom>,
     private readonly dataSource: DataSource
   ){}
 
