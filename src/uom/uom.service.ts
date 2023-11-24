@@ -8,7 +8,7 @@ import { Uom } from './entities/uom.entity';
 export class UomService {
   constructor(
     // @InjectRepository(Item)
-    private readonly itemRepo: Repository<Uom>,
+    // private readonly itemRepo: Repository<Uom>,
     private readonly dataSource: DataSource
   ){}
 
@@ -19,3 +19,4 @@ export class UomService {
     return uom;
   }
 }
+
