@@ -12,8 +12,8 @@ export class ItemController {
   //   return this.itemService.create(createItemDto);
   // }
 
-  @Get(':priceList/:warehouseCode')
-  async findBy(@Param('priceList') priceList: number, @Param('warehouseCode') warehouseCode: string){
-    return await this.itemService.findAll(priceList,warehouseCode);
+  @Get(':priceList/:warehouseCode/:cardCode')
+  async findBy(@Param('priceList') priceList: number, @Param('warehouseCode') warehouseCode: string,@Param('cardCode') cardCode: string){
+    return await this.itemService.findAll(priceList,warehouseCode,cardCode);
   }
 }

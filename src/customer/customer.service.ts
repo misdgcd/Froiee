@@ -17,7 +17,7 @@ export class CustomerService {
 
   async findAll() {
     const customers = await this.dataSource.query(
-      `SELECT CardCode,CardName,CardFName, LicTradNum,Address FROM OCRD WHERE frozenFor='N' ORDER BY CardName`
+      `SELECT CardCode,CardName,CardFName, LicTradNum,Address FROM OCRD WHERE frozenFor='N' AND CardType='C' ORDER BY CardName`
     );
     return customers;
   }

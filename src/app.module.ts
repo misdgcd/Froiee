@@ -10,6 +10,7 @@ import { DiscountPriceModule } from './discount-price/discount-price.module';
 import { TaxCodeModule } from './tax-code/tax-code.module';
 import { TaxRateModule } from './tax-rate/tax-rate.module';
 import { WarehouseSohModule } from './warehouse-soh/warehouse-soh.module';
+import { SrpModule } from './srp/srp.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -29,7 +30,7 @@ import { WarehouseSohModule } from './warehouse-soh/warehouse-soh.module';
     }
   
   })
-  ,CustomerModule, ItemModule, UomModule, LowerboundModule, DiscountPriceModule, TaxCodeModule, TaxRateModule, WarehouseSohModule],
+  ,CustomerModule, ItemModule, UomModule, LowerboundModule, DiscountPriceModule, TaxCodeModule, TaxRateModule, WarehouseSohModule, SrpModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -14,9 +14,9 @@ export class ItemService {
     private readonly dataSource: DataSource
   ){}
   
-  async findAll(priceList: number,warehouse: string) {
+  async findAll(priceList: number,warehouse: string, cardCode:string ) {
     const items = await this.dataSource.query(
-      `SELECT * FROM TVF_ITEM_DETAILS (${priceList},'${warehouse}') ORDER BY ItemName`
+      `SELECT * FROM TVF_ITEM_DETAILS (${priceList},'${warehouse}','${cardCode}') ORDER BY ItemName`
     );
     return items;
   }

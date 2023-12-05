@@ -11,9 +11,9 @@ export class LowerboundService {
     private readonly dataSource: DataSource
   ){}
 
-  async findAll(brachID: number, taxCode: string, itemCode: string, warehouseCode: string) {
+  async findAll(PriceListNum: number, taxCode: string, itemCode: string, warehouseCode: string, UoMQty: number) {
     const uom = await this.dataSource.query(
-      `SELECT dbo.fn_GetLowerBound (${brachID}, '${taxCode}', '${itemCode}','${warehouseCode}') AS LoweBound`
+      `SELECT dbo.fn_GetLowerBound (${PriceListNum}, '${taxCode}', '${itemCode}','${warehouseCode}', ${UoMQty}) AS LowerBound`
     );
     return uom;
   }
